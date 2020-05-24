@@ -11,8 +11,9 @@ import (
 )
 
 const (
-	url  = `ws://localhost:8080/guacamole/websocket-tunnel?token=996D0343862534374488C7AFEAEF08AB09908AA5BA3BFA7333B5B25ED3DE4812&GUAC_DATA_SOURCE=postgresql&GUAC_ID=0d029c1f-d63d-45ed-a2b6-9a5ea9eef127&GUAC_TYPE=a&GUAC_WIDTH=2248&GUAC_HEIGHT=990&GUAC_DPI=192&GUAC_TIMEZONE=America%2FChicago&GUAC_AUDIO=audio%2FL8&GUAC_AUDIO=audio%2FL16&GUAC_IMAGE=image%2Fjpeg&GUAC_IMAGE=image%2Fpng&GUAC_IMAGE=image%2Fwebp`
-	load = 100
+	url    = `ws://localhost:8080/guacamole/websocket-tunnel?token=996D0343862534374488C7AFEAEF08AB09908AA5BA3BFA7333B5B25ED3DE4812&GUAC_DATA_SOURCE=postgresql&GUAC_ID=0d029c1f-d63d-45ed-a2b6-9a5ea9eef127&GUAC_TYPE=a&GUAC_WIDTH=2248&GUAC_HEIGHT=990&GUAC_DPI=192&GUAC_TIMEZONE=America%2FChicago&GUAC_AUDIO=audio%2FL8&GUAC_AUDIO=audio%2FL16&GUAC_IMAGE=image%2Fjpeg&GUAC_IMAGE=image%2Fpng&GUAC_IMAGE=image%2Fwebp`
+	cookie = "PUT COOKIES HERE"
+	load   = 100
 )
 
 func main() {
@@ -36,7 +37,7 @@ func main() {
 
 func connect(i int) {
 	headers := http.Header{"Cookie": []string{
-		"PUT COOKIES HERE",
+		cookie,
 	}}
 
 	log.Println("Dialing", i)
